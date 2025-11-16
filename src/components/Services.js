@@ -1,5 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import serviceImageA from '../assets/images/a.png';
+import serviceImageB from '../assets/images/b.png';
+import serviceImageC from '../assets/images/c.png';
+import serviceImageD from '../assets/images/d.png';
+import serviceImageE from '../assets/images/e.png';
+import serviceImageF from '../assets/images/f.png';
 import './Services.css';
 
 const Services = () => {
@@ -7,35 +13,41 @@ const Services = () => {
 
   const services = [
     {
+      id: 1,
       title: 'Risk Management',
+      image: serviceImageA,
       description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-      image: '👥',
       path: '/services/risk-management'
     },
     {
+      id: 2,
       title: 'Bonds & Commodities',
-      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-      image: '📊'
+      image: serviceImageB,
+      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
     },
     {
+      id: 3,
       title: 'Assurance & Audits',
-      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-      image: '📋'
+      image: serviceImageC,
+      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
     },
     {
+      id: 4,
       title: 'Tax and Trusts',
-      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-      image: '💼'
+      image: serviceImageD,
+      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
     },
     {
+      id: 5,
       title: 'Financial Advisor',
-      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-      image: '💡'
+      image: serviceImageE,
+      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
     },
     {
+      id: 6,
       title: 'Statistic Advisors',
-      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-      image: '📈'
+      image: serviceImageF,
+      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
     }
   ];
 
@@ -45,20 +57,22 @@ const Services = () => {
         <div className="section-header">
           <div className="section-subtitle-label">OUR SERVICES</div>
           <h2 className="section-title">
-            We Provide <span className="gradient-text">The Solutions</span> To Grow Your <span className="gradient-text">Business Faster</span>
+            We Provide The Solutions<br />To Grow Your Business Faster
           </h2>
         </div>
         
         <div className="services-grid">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div 
-              key={index} 
+              key={service.id} 
               className="service-card"
               onClick={() => service.path && navigate(service.path)}
               style={{ cursor: service.path ? 'pointer' : 'default' }}
             >
-              <div className="service-image">{service.image}</div>
               <h3 className="service-title">{service.title}</h3>
+              <div className="service-image-wrapper">
+                <img src={service.image} alt={service.title} className="service-image" />
+              </div>
               <p className="service-description">{service.description}</p>
             </div>
           ))}

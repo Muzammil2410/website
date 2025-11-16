@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import vectorIcon from '../assets/images/Vector.svg';
 import './Header.css';
 
 const Header = () => {
@@ -60,9 +61,7 @@ const Header = () => {
       <div className="header-main">
         <div className="header-container">
           <Link to="/" className="logo">
-            <div className="logo-icon">
-              <div className="logo-dot"></div>
-            </div>
+            <img src={vectorIcon} alt="Onatrix Logo" className="logo-icon" />
             <span className="logo-text">Onatrix</span>
           </Link>
           
