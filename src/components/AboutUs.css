@@ -104,6 +104,7 @@
 @media (max-width: 768px) {
   .about-us {
     padding: 3rem 1.5rem;
+    margin-top: 0;
   }
 
   .about-title {

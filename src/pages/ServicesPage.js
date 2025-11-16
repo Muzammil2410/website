@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import serviceImageA from '../assets/images/a.png';
@@ -13,12 +14,15 @@ import dotSvg from '../assets/images/Dot.svg';
 import './ServicesPage.css';
 
 const ServicesPage = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       id: 1,
       title: 'Risk Management',
       image: serviceImageA,
-      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
+      description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
+      path: '/services/risk-management'
     },
     {
       id: 2,
@@ -78,7 +82,12 @@ const ServicesPage = () => {
           <div className="services-page-container">
             <div className="services-grid">
               {services.map((service) => (
-                <div key={service.id} className="service-card">
+                <div 
+                  key={service.id} 
+                  className="service-card"
+                  onClick={() => service.path && navigate(service.path)}
+                  style={{ cursor: service.path ? 'pointer' : 'default' }}
+                >
                   <h3 className="service-title">{service.title}</h3>
                   <div className="service-image-wrapper">
                     <img src={service.image} alt={service.title} className="service-image" />

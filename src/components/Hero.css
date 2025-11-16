@@ -1,7 +1,10 @@
 .hero {
   padding-top: 120px;
   padding-bottom: 0;
-  background: white;
+  background-color: white;
+  background-size: cover;
+  background-position: center 110px; /* IMAGE DOWN */
+  background-repeat: no-repeat;
   min-height: 552px;
   display: flex;
   align-items: center;
@@ -13,10 +16,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: center;
+  display: block;
   position: relative;
 }
 
@@ -74,22 +74,6 @@
   box-shadow: 0 5px 15px rgba(79, 89, 85, 0.3);
 }
 
-.hero-image {
-  position: relative;
-  width: 100%;
-  height: 552px;
-  overflow: hidden;
-  animation: fadeInRight 0.8s ease;
-}
-
-.hero-image-main {
-  width: 100%;
-  height: 552px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -113,17 +97,12 @@
 }
 
 @media (max-width: 1200px) {
-  .hero-container {
-    grid-template-columns: 1fr;
+  .hero-content {
     text-align: center;
   }
 
   .hero-description {
     max-width: 100%;
-  }
-
-  .hero-image {
-    order: -1;
   }
 }
 
@@ -131,11 +110,11 @@
   .hero {
     padding-top: 140px;
     padding-bottom: 2rem;
+    background-position: center 60px; /* MOBILE ALSO DOWN */
   }
 
   .hero-container {
     padding: 0 1.5rem;
-    gap: 2rem;
   }
 
   .hero-title {
@@ -148,9 +127,5 @@
 
   .hero-description {
     font-size: 1rem;
-  }
-
-  .hero-image-placeholder {
-    height: 350px;
   }
 }

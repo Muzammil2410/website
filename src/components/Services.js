@@ -1,12 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Services.css';
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       title: 'Risk Management',
       description: 'Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non',
-      image: '👥'
+      image: '👥',
+      path: '/services/risk-management'
     },
     {
       title: 'Bonds & Commodities',
@@ -47,7 +51,12 @@ const Services = () => {
         
         <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="service-card">
+            <div 
+              key={index} 
+              className="service-card"
+              onClick={() => service.path && navigate(service.path)}
+              style={{ cursor: service.path ? 'pointer' : 'default' }}
+            >
               <div className="service-image">{service.image}</div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
