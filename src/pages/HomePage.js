@@ -13,11 +13,11 @@ const HomePage = () => {
   return (
     <div className="App">
       <Header />
+      <Hero />
       <div style={{ position: 'relative' }}>
-        <Hero />
+        <AboutUs />
         <CallbackForm />
       </div>
-      <AboutUs />
       <Services />
       <SuccessStory />
       <MeetingPhoto />

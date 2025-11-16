@@ -1,6 +1,6 @@
 .callback-form-container {
   position: absolute;
-  bottom: -120px;
+  top: -120px;
   right: 4rem;
   z-index: 100;
   max-width: 450px;
@@ -102,7 +102,7 @@
 @media (max-width: 1200px) {
   .callback-form-container {
     right: 2rem;
-    bottom: -100px;
+    top: -100px;
   }
 }
 
